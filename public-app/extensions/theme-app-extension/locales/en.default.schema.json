@@ -1,0 +1,5 @@
+{
+  "hello_all_pages": { "name": "Hello (all pages)" },
+  "hello": { "name": "Hello" },
+  "app_embed_hello_customer_account": { "name": "Hello (customer account)" }
+}

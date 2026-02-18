@@ -1,0 +1,12 @@
+{
+  "earnPoints": "Vous avez gagné 1,000 points avec cette commande. Vous avez été promu au niveau Platine.",
+  "loyaltyHeading": "Fidélité",
+  "customerNameLabel": "Nom du client",
+  "customerName": "Alok",
+  "totalPointsLabel": "Points totaux gagnés",
+  "totalPoints": "10 000",
+  "usedPointsLabel": "Points utilisés",
+  "usedPoints": "4 000",
+  "availablePointsLabel": "Points disponibles",
+  "availablePoints": "6 000"
+}

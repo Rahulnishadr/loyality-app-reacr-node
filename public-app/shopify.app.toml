@@ -1,0 +1,39 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "57fce42000b634180ddffc45119173a3"
+name = "rahul"
+application_url = "https://ecc0-103-206-131-194.ngrok-free.app"
+embedded = true
+handle = "rahul-loyalty"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products,read_customers,write_customers,read_orders,read_themes,write_themes"
+
+[auth]
+redirect_urls = [
+  "https://ecc0-103-206-131-194.ngrok-free.app/auth/callback",
+  "https://ecc0-103-206-131-194.ngrok-free.app/auth/shopify/callback",
+  "https://ecc0-103-206-131-194.ngrok-free.app/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01" 
+[[webhooks.subscriptions]]
+topics = ["app/uninstalled"]
+uri = "/webhooks/app/uninstalled"
+
+
+# GDPR / Compliance Webhooks go here (NEW FORMAT)
+[webhooks.compliance_topics]
+customers_data_request = "/webhooks/customers/data_request"
+customers_redact = "/webhooks/customers/redact"
+shop_redact = "/webhooks/shop/redact"
+
+
+[pos]
+embedded = false
+
+[build] 
+automatically_update_urls_on_dev = true 
+dev_store_url = "ens253-alok-kumar-singh.myshopify.com"

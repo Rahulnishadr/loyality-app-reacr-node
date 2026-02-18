@@ -1,0 +1,126 @@
+.btnSubmit{
+  background-color: #000;
+  color: #fff;
+  padding: 1%;
+  border: none;
+  cursor: pointer;
+}
+.btnSubmit:hover{
+  background-color: #000;
+  color: #fff;
+}
+.login{
+  margin : auto;
+  width: 50%;
+  transform: translate(0%, 50%);
+  background-color: #f3f3f3;
+  border-radius:30px ;
+}
+.containerBox{
+  padding: 7% 5%;
+}
+.form-group {
+  margin-bottom: 3%;
+}
+.form-group input{
+  height: 1.5rem;
+}
+.logo_design{
+  width: 229px;
+  border-right: 2px solid #dee2e6;
+}
+.notification{
+  background: #F5F7FA;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.profile{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* ----------------------------- */
+/* .MuiDataGrid-row--borderBottom .css-yseucu-MuiDataGrid-columnHeaderRow{
+background-color: #b4b4b4 !important;
+font-size: 40px;
+} */
+
+.css-2t5cyh-MuiDataGrid-root .MuiDataGrid-container--top [role=row], .css-2t5cyh-MuiDataGrid-root .MuiDataGrid-container--bottom [role=row] {
+  background: #b4b4b4 !important
+}
+
+.tableHeader{
+  background:#b4b4b4 !important ;
+}
+
+.span_icone{
+  font-size: 22px;
+  /* margin-left: 10px; */
+  padding: 10px
+} 
+.css-ece9u5 {
+  min-width: 166px !important;
+}
+ 
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.data-table-container {
+  max-height: 600px; /* Adjust as needed */
+  overflow-y: auto; /* Adds a vertical scrollbar if content exceeds max-height */
+}
+ 
+/* .custom-shadow {
+  @apply shadow-none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+} */
+
+/* Custom styling for the toast */
+.my-toast {
+  background-color: #4caf50; /* Green background for success */
+  color: white; /* White text color */
+  font-size: 14px; /* Font size */
+  padding: 10px; /* Padding */
+}
+
+/* Example for different toast types */
+.my-toast.success {
+  background-color: #28a745; /* Green background for success */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.my-toast.error {
+  background-color: #dc3545; /* Red background for error */
+}
+
+.my-toast.info {
+  background-color: #17a2b8; /* Blue background for info */
+}
+
+.my-toast.warning {
+  background-color: #ffc107; /* Yellow background for warning */
+}

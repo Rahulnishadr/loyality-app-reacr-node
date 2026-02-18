@@ -1,0 +1,21 @@
+{
+    "note1":"Only .xls or .xlsx file allowed!",
+    "note2":"Format of date shouid be YYYY-MM-DD!",
+    "note3":"Allowed Coupon 10000 at a time!",
+    "readOnly":"You can read only!",
+    "createOnly" : "You don't have permission to create!",
+    "updateSuccessful":"Updated Successfully!",
+    "noDataFound":"No data available!",
+    "requestNotFound" : "Request not found",
+    "voucherApproved" : "Voucher approved successfully!",
+    "resendSuccessful" : "Resend successfully!",
+    "resendLimit" : "You can't resend more than 2 times!",
+    "pdfNotGenerated" : "No data available to generate PDF.",
+    "fetchedSuccessfully" : "Fetch data successfully!",
+    "faildedToLoad" : "Failed to load data, Please try again!",
+    "failedToCreateAccess" : "Failed to create access, Please try again!",
+    "failedToUpdateAccess" : "Failed to update access, Please try again!",
+    "notRecordFound" : "No record found!",
+    "somethingWentWrong" : "Something went wrong!",
+    "pleaseUploadValid" : "Please upload a valid Excel file (.xls or .xlsx)."
+}

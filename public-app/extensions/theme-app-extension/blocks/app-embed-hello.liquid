@@ -1,0 +1,14 @@
+{% comment %}
+  App embed: when enabled in Theme settings > App embeds, "hello" is printed on ALL pages
+  of the store (every template). Target: body = injected before </body> on every page.
+{% endcomment %}
+<div class="loyalty-notes-hello" style="padding: 6px 12px; font-family: system-ui, sans-serif; font-size: 14px; color: #333;">
+  hello
+</div>
+{% schema %}
+{
+  "name": "Hello (all pages)",
+  "target": "body",
+  "settings": []
+}
+{% endschema %}

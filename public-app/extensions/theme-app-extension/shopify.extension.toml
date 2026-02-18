@@ -1,0 +1,8 @@
+# Theme App Extension – shows "hello" on storefront (app embed = all pages, app block = any section)
+# Deploy: shopify app deploy (from project root; requires Shopify CLI)
+api_version = "2024-01"
+
+uid = "c0a014db-6e36-fc6e-3cbc-99291731d49db20d75ec"
+
+type = "theme"
+name = "Loyalty & Notes"

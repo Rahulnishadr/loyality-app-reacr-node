@@ -1,0 +1,26 @@
+{% comment %}
+  App embed: only on customer account pages (account, orders, addresses, login, register, etc.).
+  Enable in Theme settings > App embeds → "Hello (customer account)".
+  Prints "hello" when the customer is on any customer account template.
+{% endcomment %}
+<div class="loyalty-notes-hello-customer-account" style="padding: 8px 12px; font-family: system-ui, sans-serif; font-size: 14px; color: #333;">
+  hello
+</div>
+{% schema %}
+{
+  "name": "Hello (customer account)",
+  "target": "body",
+  "enabled_on": {
+    "templates": [
+      "customers/account",
+      "customers/order",
+      "customers/addresses",
+      "customers/login",
+      "customers/register",
+      "customers/activate_account",
+      "customers/reset_password"
+    ]
+  },
+  "settings": []
+}
+{% endschema %}

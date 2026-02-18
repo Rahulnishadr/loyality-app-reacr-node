@@ -1,4 +1,4 @@
-import { Frame } from '@shopify/polaris';
+import { Frame, Box } from '@shopify/polaris';
 import { Outlet } from 'react-router-dom';
 
 /**
@@ -25,9 +25,9 @@ export default function Layout() {
         <s-link href="/pin-list">Pin List</s-link>
         <s-link href="/notification">Notification</s-link>
       </s-app-nav>
-      <div style={{ padding: '20px' }}>
+      <Box padding="400" paddingBlockEnd="800">
         <Outlet />
-      </div>
+      </Box>
     </Frame>
   );
 }

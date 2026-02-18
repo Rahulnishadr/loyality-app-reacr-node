@@ -1,5 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AppProvider } from '@shopify/polaris';
+import '@shopify/polaris/build/esm/styles.css';
+import en from '@shopify/polaris/locales/en.json';
 import Login from './pages/Login';
 // import Layout from './Layout/index.js';
 import Layout from './components/Layout.jsx';
@@ -41,7 +44,7 @@ import MigratedCustomers from './pages/MigratedCustomers.js';
 
 function App() {
   return (
-    <>
+    <AppProvider i18n={en}>
       <HeaderProvider>
         <Router>
           <Routes>
@@ -89,7 +92,7 @@ function App() {
           </Routes>
         </Router>
       </HeaderProvider>
-    </>
+    </AppProvider>
   );
 }
 

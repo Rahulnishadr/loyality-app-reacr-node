@@ -2672,6 +2672,7 @@ function RuleSet() {
     );
 
     const handleToggle = async (ruleKey, checked) => {
+        console.log('first',ruleKey,"secound" ,checked)
         if (!ruleKey || typeof checked === 'undefined') {
             console.error("Invalid arguments passed to handleToggle");
             return;
@@ -2730,13 +2731,6 @@ function RuleSet() {
         }
     };
 
-    // 
-    const data = {};
-    const permission = (data) => {
-        if (data == "read") {
-            showPopup('warning', msg.readOnly)
-        }
-    }
     return (
         <div className="w-full mx-auto">
             {showLoader && <LoaderSpiner text="Loading ..." />}
@@ -2796,8 +2790,7 @@ function RuleSet() {
                                 </h1>
                                 <label className="relative inline-flex items-center cursor-pointer">
 
-                                    {data?.role_permissions?.Rule_Set?.update ? <>
-                                        <input
+                                    <input
                                             type="checkbox"
                                             name="switch1"
                                             checked={pointsListNew?.point_conversion_online_purchase?.status === "active"}
@@ -2806,17 +2799,6 @@ function RuleSet() {
                                                 handleToggle("point_conversion_online_purchase", e.target.checked)
                                             }
                                         />
-                                    </> : <>
-                                        <input
-                                            type="checkbox"
-                                            name="switch1"
-                                            checked={pointsListNew?.point_conversion_online_purchase?.status === "active"}
-                                            className="sr-only peer"
-                                            onChange={(e) =>
-                                                permission('read')
-                                            }
-                                        />
-                                    </>}
                                     <div className="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors duration-300"></div>
                                     <div
                                         className={`absolute left-0 top-0.5 w-5 h-5 bg-white border border-gray-300 rounded-full transition-transform duration-300 ${pointsListNew?.point_conversion_online_purchase?.status === "active" ? "translate-x-4" : "translate-x-0"
@@ -2825,8 +2807,7 @@ function RuleSet() {
                                 </label>
                             </div>
 
-                            {data?.role_permissions?.Rule_Set?.update?<>
-                                <button
+                            <button
                                     className={`px-4 py-2 rounded-md ml-2 ${pointsListNew?.point_conversion_online_purchase?.value && Object.keys(pointsListNew?.point_conversion_online_purchase?.value).length > 0
                                         ? "bg-gray-400 text-white-500 cursor-not-allowed"
                                         : "bg-blue-500 text-white"
@@ -2836,18 +2817,6 @@ function RuleSet() {
                                 >
                                     Add
                                 </button>
-                            </> : <>
-                                <button
-                                    className={`px-4 py-2 rounded-md ml-2 ${pointsListNew?.point_conversion_online_purchase?.value && Object.keys(pointsListNew?.point_conversion_online_purchase?.value).length > 0
-                                        ? "bg-gray-400 text-white-500 cursor-not-allowed"
-                                        : "bg-blue-500 text-white"
-                                        }`}
-                                    onClick={() => permission('read')}
-                                    disabled={pointsListNew?.point_conversion_online_purchase?.value && Object.keys(pointsListNew?.point_conversion_online_purchase.value).length > 0}
-                                >
-                                    Add
-                                </button>
-                            </>}
                         </div>
                         <div className="max-h-[278px] min-h-auto overflow-y-auto">
                             {pointsListNew?.point_conversion_online_purchase?.status == "active" ? <>
@@ -2884,24 +2853,12 @@ function RuleSet() {
                                                 {pointsListNew?.point_conversion_online_purchase?.value[0]?.created_by ?? "Super Admin"}
                                             </td>
                                             <td className="p-2 border border-gray-300">
-                                                {data?.role_permissions?.Rule_Set?.update ? <>
-
-                                                    <button
+                                                <button
                                                         className="mr-4 text-[#178eba]"
                                                         onClick={() => editById(pointsListNew?.point_conversion_online_purchase?.value[0]?.value_id)}
                                                     >
                                                         <i className="fas fa-pen"></i>
                                                     </button>
-                                                </> : <>
-                                                    <button
-                                                        className="mr-4 text-[#178eba]"
-                                                        onClick={() => permission('read')}
-                                                    >
-                                                        <i className="fas fa-pen"></i>
-                                                    </button>
-                                                </>}
-
-                                                {data?.role_permissions?.Rule_Set?.delete ? <>
 
                                                     <button
                                                         className="text-red-500"
@@ -2909,14 +2866,6 @@ function RuleSet() {
                                                     >
                                                         <i className="fas fa-trash"></i>
                                                     </button>
-                                                </> : <>
-                                                    <button
-                                                        className="text-red-500"
-                                                        onClick={() => permission('read')}
-                                                    >
-                                                        <i className="fas fa-trash"></i>
-                                                    </button>
-                                                </>}
                                             </td>
                                         </tr>
 
@@ -2941,8 +2890,7 @@ function RuleSet() {
                                     </h1>
                                     <div >
                                         <label className="relative inline-flex items-center cursor-pointer">
-                                            {data?.role_permissions?.Rule_Set?.update ? <>
-                                                <input
+                                            <input
                                                     type="checkbox"
                                                     name="switch2"
                                                     checked={pointsListNew?.point_conversion_based_on_sku?.status === "active"}
@@ -2951,17 +2899,6 @@ function RuleSet() {
                                                         handleToggle("point_conversion_based_on_sku", e.target.checked)
                                                     }
                                                 />
-                                            </> : <>
-                                                <input
-                                                    type="checkbox"
-                                                    name="switch2"
-                                                    checked={pointsListNew?.point_conversion_based_on_sku?.status === "active"}
-                                                    className="sr-only peer"
-                                                    onChange={(e) =>
-                                                        permission('read')
-                                                    }
-                                                />
-                                            </>}
                                             <div className="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors duration-300"></div>
                                             <div
                                                 className={`absolute left-0 top-0.5 w-5 h-5 bg-white border border-gray-300 rounded-full transition-transform duration-300 ${pointsListNew?.point_conversion_based_on_sku?.status === "active" ? "translate-x-4" : "translate-x-0"
@@ -2970,21 +2907,12 @@ function RuleSet() {
                                         </label>
                                     </div>
                                 </div>
-                                 {data?.role_permissions?.Rule_Set?.update ? <>
-                                    <button
-                                        className="px-4 py-2 bg-blue-500 text-white rounded-md ml-2"
-                                        onClick={handleOpenSKU}
-                                    >
-                                        Add
-                                    </button>
-                                </> : <>
-                                    <button
-                                        className="px-4 py-2 bg-blue-500 text-white rounded-md ml-2"
-                                        onClick={(e) => permission('read')}
-                                    >
-                                        Add
-                                    </button>
-                                </>}
+                                 <button
+                                    className="px-4 py-2 bg-blue-500 text-white rounded-md ml-2"
+                                    onClick={handleOpenSKU}
+                                >
+                                    Add
+                                </button>
                             </div>
                             <div className="max-h-[278px] min-h-auto overflow-y-auto">
                                 {pointsListNew?.point_conversion_based_on_sku?.status == "active" ? <>
@@ -3028,22 +2956,12 @@ function RuleSet() {
                                                                 {row.createdBy ?? "Super Admin"}
                                                             </td>
                                                             <td className="p-2 border border-gray-300">
-                                                                {data?.role_permissions?.Rule_Set?.update ? <>
-                                                                    <button
+                                                                <button
                                                                         className="mr-4 text-[#178eba]"
                                                                         onClick={() => skuEditById(row?.value_id)}
                                                                     >
                                                                         <i className="fas fa-pen"></i>
                                                                     </button>
-                                                                </> : <>
-                                                                    <button
-                                                                        className="mr-4 text-[#178eba]"
-                                                                        onClick={() => permission('read')}
-                                                                    >
-                                                                        <i className="fas fa-pen"></i>
-                                                                    </button>
-                                                                </>}
-                                                                {data?.role_permissions?.Rule_Set?.delete ? <>
 
                                                                     <button
                                                                         className="text-red-500"
@@ -3051,14 +2969,6 @@ function RuleSet() {
                                                                     >
                                                                         <i className="fas fa-trash"></i>
                                                                     </button>
-                                                                </> : <>
-                                                                    <button
-                                                                        className="text-red-500"
-                                                                        onClick={() => permission('read')}
-                                                                    >
-                                                                        <i className="fas fa-trash"></i>
-                                                                    </button>
-                                                                </>}
                                                             </td>
                                                         </tr>
                                                     ))
@@ -3084,8 +2994,7 @@ function RuleSet() {
                                     <h1 className="text-lg font-bold">Category</h1>
                                     <div>
                                         <label className="relative inline-flex items-center cursor-pointer">
-                                            {data?.role_permissions?.Rule_Set?.update ? <>
-                                                <input
+                                            <input
                                                     type="checkbox"
                                                     name="switch5"
                                                     checked={pointsListNew?.point_conversion_based_on_category?.status === "active"}
@@ -3094,17 +3003,6 @@ function RuleSet() {
                                                         handleToggle("point_conversion_based_on_category", e.target.checked)
                                                     }
                                                 />
-                                            </> : <>
-                                                <input
-                                                    type="checkbox"
-                                                    name="switch5"
-                                                    checked={pointsListNew?.point_conversion_based_on_category?.status === "active"}
-                                                    className="sr-only peer"
-                                                    onChange={(e) =>
-                                                        permission('read')
-                                                    }
-                                                />
-                                            </>}
                                             <div className="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors duration-300"></div>
                                             <div
                                                 className={`absolute left-0 top-0.5 w-5 h-5 bg-white border border-gray-300 rounded-full transition-transform duration-300 ${pointsListNew?.point_conversion_based_on_category?.status === "active" ? "translate-x-4" : "translate-x-0"
@@ -3113,22 +3011,12 @@ function RuleSet() {
                                         </label>
                                     </div>
                                 </div>
-                                {data?.role_permissions?.Rule_Set?.update ? <>
-
-                                    <button
+                                <button
                                         className="px-4 py-2 bg-blue-500 text-white rounded-md ml-2"
                                         onClick={() => handleOpenCategorie(false)}
                                     >
                                         Add
                                     </button>
-                                </> : <>
-                                    <button
-                                        className="px-4 py-2 bg-blue-500 text-white rounded-md ml-2"
-                                        onClick={(e) => permission('read')}
-                                    >
-                                        Add
-                                    </button>
-                                </>}
                             </div>
                             <div className="max-h-[278px] min-h-auto overflow-y-auto">
                                 {pointsListNew?.point_conversion_based_on_category?.status == 'active' ? <>
@@ -3166,37 +3054,18 @@ function RuleSet() {
                                                             {row?.remarks ?? "N/A"}
                                                         </td>
                                                         <td className="p-2 border border-gray-300">
-                                                            {data?.role_permissions?.Rule_Set?.update ? <>
-
-                                                                <button
+                                                            <button
                                                                     className="mr-4 text-[#178eba]"
                                                                     onClick={() => handleEditCategory(row?.value_id)}
                                                                 >
                                                                     <i className="fas fa-pen"></i>
                                                                 </button>
-                                                            </> : <>
-                                                                <button
-                                                                    className="mr-4 text-[#178eba]"
-                                                                    onClick={() => permission('read')}
-                                                                >
-                                                                    <i className="fas fa-pen"></i>
-                                                                </button>
-                                                            </>}
-                                                            {data?.role_permissions?.Rule_Set?.delete ? <>
                                                                 <button
                                                                     className="text-red-500"
                                                                     onClick={() => handleDeleteskuCategory(row?.value_id)}
                                                                 >
                                                                     <i className="fas fa-trash"></i>
                                                                 </button>
-                                                            </> : <>
-                                                                <button
-                                                                    className="text-red-500"
-                                                                    onClick={() => permission('read')}
-                                                                >
-                                                                    <i className="fas fa-trash"></i>
-                                                                </button>
-                                                            </>}
                                                         </td>
                                                     </tr>
                                                 ))
@@ -3229,9 +3098,7 @@ function RuleSet() {
                                 </h1>
                                 <div>
                                     <label className="relative inline-flex items-center cursor-pointer">
-                                        {data?.role_permissions?.Rule_Set?.update ? <>
-
-                                            <input
+                                        <input
                                                 type="checkbox"
                                                 name="switch3"
                                                 checked={pointsListNew?.coupon?.status === "active"}
@@ -3240,17 +3107,6 @@ function RuleSet() {
                                                     handleToggle("coupon", e.target.checked)
                                                 }
                                             />
-                                        </> : <>
-                                            <input
-                                                type="checkbox"
-                                                name="switch3"
-                                                checked={pointsListNew?.coupon?.status === "active"}
-                                                className="sr-only peer"
-                                                onChange={(e) =>
-                                                    permission('read')
-                                                }
-                                            />
-                                        </>}
                                         <div className="w-10 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-500 transition-colors duration-300"></div>
                                         <div
                                             className={`absolute left-0 top-0.5 w-5 h-5 bg-white border border-gray-300 rounded-full transition-transform duration-300 ${pointsListNew?.coupon?.status === "active" ? "translate-x-4" : "translate-x-0"
@@ -3259,21 +3115,12 @@ function RuleSet() {
                                     </label>
                                 </div>
                             </div>
-                            {data?.role_permissions?.Rule_Set?.update ? <>
-                                <button
+                            <button
                                     className="px-4 py-2 bg-blue-500 text-white rounded-md ml-2"
                                     onClick={handleOpenCoupon}
                                 >
                                     Add
                                 </button>
-                            </> : <>
-                                <button
-                                    className="px-4 py-2 bg-blue-500 text-white rounded-md ml-2"
-                                    onClick={(e) => permission('read')}
-                                >
-                                    Add
-                                </button>
-                            </>}
                         </div>
                         <div className="max-h-[278px] min-h-auto overflow-y-auto">
                             {pointsListNew?.coupon?.status == 'active' ? <>
@@ -3318,37 +3165,18 @@ function RuleSet() {
                                                         {row.createdBy ?? "Super Admin"}
                                                     </td>
                                                     <td className="p-2 border border-gray-300">
-                                                        {data?.role_permissions?.Rule_Set?.update ? <>
-                                                            <button
+                                                        <button
                                                                 className="mr-4 text-[#178eba]"
                                                                 onClick={() => CouponEditById(row?.value_id)}
                                                             >
                                                                 <i className="fas fa-pen"></i>
                                                             </button>
-                                                        </> : <>
-                                                            <button
-                                                                className="mr-4 text-[#178eba]"
-                                                                onClick={() => permission('read')}
-                                                            >
-                                                                <i className="fas fa-pen"></i>
-                                                            </button>
-                                                        </>}
-                                                        {data?.role_permissions?.Rule_Set?.delete ? <>
-
                                                             <button
                                                                 className="text-red-500"
                                                                 onClick={() => handleDeleteskuRetail(row?.value_id)}
                                                             >
                                                                 <i className="fas fa-trash"></i>
                                                             </button>
-                                                        </> : <>
-                                                            <button
-                                                                className="text-red-500"
-                                                                onClick={() => permission('read')}
-                                                            >
-                                                                <i className="fas fa-trash"></i>
-                                                            </button>
-                                                        </>}
                                                     </td>
                                                 </tr>
                                             ))
@@ -3415,22 +3243,12 @@ function RuleSet() {
                                     </td>
                                     <td className=" text-center p-2 border border-gray-300">
  
-                                        {data?.role_permissions?.Rule_Set?.update ? <>
-
-                                            <button
+                                        <button
                                                 className="mr-4 text-[#178eba]"
                                                 onClick={() => RegistrationEditById(registration)}
                                             >
                                                 <i className="fas fa-pen"></i>
                                             </button>
-                                        </> : <>
-                                            <button
-                                                className="mr-4 text-[#178eba]"
-                                                onClick={() => permission('read')}
-                                            >
-                                                <i className="fas fa-pen"></i>
-                                            </button>
-                                        </>}
                                     </td>
                                 </tr>
 

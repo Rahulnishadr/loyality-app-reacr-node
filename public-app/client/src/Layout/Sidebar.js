@@ -24,17 +24,6 @@ function Sidebar() {
     setSelectedMenu(menu === selectedMenu ? null : menu);
   };
 
-  const data = {
-    role_permissions: {
-      Rule_Set: { enabled: true },
-      Transaction_Management: { enabled: true },
-      Customer_Management: { enabled: true },
-      Management: { enabled: true },
-      Setting: { enabled: true },
-    },
-  };
-
-
   return (
     <div className="w-full min-h-screen bg-white shadow-md ">
       <div className="px-4 py-2">
@@ -49,8 +38,7 @@ function Sidebar() {
 
 
         {/* Rule Set */}
-        {data?.role_permissions?.Rule_Set && data?.role_permissions?.Rule_Set?.enabled? <>
-          <button
+        <button
             onClick={() => toggleMenu("Rule_Set")}
             className={`flex items-center w-full text-left py-2 ${openMenu === "Rule_Set" ? "text-blue-500" : "text-gray-800"
               } hover:bg-gray-100 font-medium`}
@@ -60,7 +48,6 @@ function Sidebar() {
             <KeyboardArrowDownIcon />
 
           </button>
-        </> : <></>}
 
         {openMenu === "Rule_Set" && (
           <div className="pl-4">
@@ -117,8 +104,7 @@ function Sidebar() {
         )}
 
         {/* transaction management */}
-        {data?.role_permissions?.Transaction_Management && data?.role_permissions?.Transaction_Management?.enabled? <>
-          <button
+        <button
             onClick={() => toggleMenu("transaction")}
             className={`flex items-center w-full text-left py-2  ${openMenu === "transaction" ? "text-blue-500" : "text-gray-800"
               } hover:bg-gray-100 font-medium`}
@@ -126,7 +112,6 @@ function Sidebar() {
             <FaExchangeAlt className="mr-2" /> Transaction Management
             <KeyboardArrowDownIcon />
           </button>
-        </> : <></>}
 
         {openMenu === "transaction" && (
           <div className="pl-4">
@@ -145,8 +130,7 @@ function Sidebar() {
           </div>
         )}
         {/* Customer Management */}
-        {data?.role_permissions?.Customer_Management && data?.role_permissions?.Customer_Management?.enabled? <>
-          <button
+        <button
             onClick={() => toggleMenu("CustomerManagement")}
             className={`flex items-center w-full text-left py-2 font-medium ${openMenu === "CustomerManagement"
               ? "text-blue-500"
@@ -158,7 +142,6 @@ function Sidebar() {
             <KeyboardArrowDownIcon />
 
           </button>
-        </> : <></>}
 
         {openMenu === "CustomerManagement" && (
           <div className="pl-4">
@@ -178,8 +161,7 @@ function Sidebar() {
         )}
 
         {/* Management */}
-        {data?.role_permissions?.Management && data?.role_permissions?.Management?.enabled? <>
-          <button
+        <button
             onClick={() => toggleMenu("Management")}
             className={`flex items-center w-full text-left py-2 ${openMenu === "Management" ? "text-blue-500" : "text-gray-800"
               } hover:bg-gray-100 font-medium`}
@@ -189,7 +171,6 @@ function Sidebar() {
             <KeyboardArrowDownIcon />
 
           </button>
-        </> : <></>}
 
         {openMenu === "Management" && (
           <div className="pl-4">
@@ -222,8 +203,7 @@ function Sidebar() {
  
 
         {/* Setting */}
-        {data?.role_permissions?.Setting && data?.role_permissions?.Setting?.enabled? <>
-          <button
+        <button
             onClick={() => toggleMenu("Setting")}
             className={`flex items-center w-full text-left py-2 ${openMenu === "Setting" ? "text-blue-500" : "text-gray-800"
               } hover:bg-gray-100 font-medium`}
@@ -233,7 +213,6 @@ function Sidebar() {
             <KeyboardArrowDownIcon />
 
           </button>
-        </> : <></>}
 
         {openMenu === "Setting" && (
           <div className="pl-4">

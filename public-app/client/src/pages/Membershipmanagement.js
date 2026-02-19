@@ -720,21 +720,12 @@ const Membershipmanagement = () => {
         <h1 className="text-3xl font-semibold">
           Membership Tiers And Benefits
         </h1>
-        {data?.role_permissions?.Management?.update ? <>
-          <button
-            onClick={handleSubmit}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-sky-500 focus:ring focus:ring-sky-500 focus:outline-none"
-          >
-            {id ? "Update" : "Save"}
-          </button>
-        </> : <>
-          <button
-            onClick={() => handleSubmit('read')}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-sky-500 focus:ring focus:ring-sky-500 focus:outline-none"
-          >
-            {id ? "Update" : "Save"}
-          </button>
-        </>}
+        <button
+          onClick={handleSubmit}
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-sky-500 focus:ring focus:ring-sky-500 focus:outline-none"
+        >
+          {id ? "Update" : "Save"}
+        </button>
 
       </div>
       <div className="bg-white rounded-lg shadow-md p-8">

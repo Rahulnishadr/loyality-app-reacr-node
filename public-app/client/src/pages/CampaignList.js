@@ -349,33 +349,16 @@ function CampaignList() {
                         className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap"
                         rowSpan={Object.keys(campaign.product_detail).length}
                       >
-                        {data?.role_permissions?.Management?.update?<>
-                          <NavLink
+                        <NavLink
                           onClick={() => fetchCampaignById(campaign.id)}
                           className="text-blue-500 hover:text-blue-700 mx-2 cursor-pointer"
                         >
                           <EditIcon />
                         </NavLink>
-                        </>:<>
-                        <NavLink
-                          onClick={() => fetchCampaignById('read')}
-                          className="text-blue-500 hover:text-blue-700 mx-2 cursor-pointer"
-                        >
-                          <EditIcon />
-                        </NavLink>
-                        </>}
-                      
-                        {data?.role_permissions?.Management?.delete?<>
                           <DeleteIcon
                           className="text-red-500 hover:text-red-700 mx-2 cursor-pointer"
                           onClick={() => handleDeleteClick(campaign.id)}
                         />
-                        </>:<>
-                        <DeleteIcon
-                          className="text-red-500 hover:text-red-700 mx-2 cursor-pointer"
-                          onClick={() => handleDeleteClick('read')}
-                        />
-                        </>}
                        
                       </td>
                     </>

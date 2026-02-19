@@ -40,15 +40,6 @@ function Sidebar() {
     setOpenSubMenu(openSubMenu === submenu ? null : submenu);
     setSelectedSubMenu(submenu === selectedSubMenu ? null : submenu); // Set selected submenu
   };
-   const data = {
-    role_permissions: {
-      Coupon_Management: { enabled: true },
-      Customer_Management: { enabled: true },
-      Management: { enabled: true },
-      Setting: { enabled: true },
-    },
-  };
-
   return (
     <div className="w-full min-h-screen bg-white shadow-md ">
       <div className="px-4 py-2">
@@ -302,7 +293,6 @@ function Sidebar() {
         )}
 
         {/* transaction management */}
-        {data?.role_permissions?.Transaction_Management && data?.role_permissions?.Transaction_Management?.enabled  ? <>
         <button
           onClick={() => toggleMenu("transaction")}
           className={`flex items-center w-full text-left py-2  ${openMenu === "transaction" ? "text-blue-500" : "text-gray-800"
@@ -311,7 +301,6 @@ function Sidebar() {
           <FaExchangeAlt className="mr-2" /> Transaction Management
           <KeyboardArrowDownIcon />
         </button>
-        </> : <></>}
         {openMenu === "transaction" && (
           <div className="pl-4">
             <NavLink
@@ -330,7 +319,6 @@ function Sidebar() {
           </div>
         )}
         {/* Customer Management */}
-        {data?.role_permissions?.Customer_Management && data?.role_permissions?.Customer_Management?.enabled? <>
         <button
           onClick={() => toggleMenu("CustomerManagement")}
           className={`flex items-center w-full text-left py-2 font-medium ${openMenu === "CustomerManagement"
@@ -343,7 +331,6 @@ function Sidebar() {
           <KeyboardArrowDownIcon />
 
         </button>
-        </>:<></>}
         {openMenu === "CustomerManagement" && (
           <div className="pl-4">
             <NavLink
@@ -563,7 +550,6 @@ function Sidebar() {
         )}
 
         {/* Setting */}
-        {data?.role_permissions?.Setting && data?.role_permissions?.Setting?.enabled?<>
         <button
           onClick={() => toggleMenu("Setting")}
           className={`flex items-center w-full text-left py-2 ${openMenu === "Setting" ? "text-blue-500" : "text-gray-800"
@@ -574,7 +560,6 @@ function Sidebar() {
           <KeyboardArrowDownIcon />
 
         </button>
-        </>:<></>}
         {openMenu === "Setting" && (
           <div className="pl-4">
             <NavLink

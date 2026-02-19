@@ -387,32 +387,13 @@ const ApproveList = () => {
                     <td className="px-2 border-r  text-left whitespace-nowrap">{transaction.approvedBy}</td>
                     <td className="px-2 border-r  text-left whitespace-nowrap">{transaction?.EndDate}</td>
                     <td className="px-2 border-r  text-left whitespace-nowrap">
-                      {data?.role_permissions?.Redeem_History?.read && data?.role_permissions?.Redeem_History?.write ?<>
                       <VisibilityIcon className='text-sky-500 cursor-pointer' onClick={() => togglePopup(transaction)} />
-                      
-                      </>:<>
-                      <VisibilityIcon className='text-sky-500 cursor-pointer' onClick={() => disableUpdate()} />
- 
-                      </>}
                     </td>
                     <td className="px-2 border-r  text-left whitespace-nowrap">
-                      {
-
-                        data?.role_permissions?.Redeem_History?.update ?
-                          (<button className={`${transaction.buttonValue == 0 ? 'bg-blue-800' : 'bg-blue-600'} w-16 text-white px-2 py-2 rounded`}
+                      <button className={`${transaction.buttonValue == 0 ? 'bg-blue-800' : 'bg-blue-600'} w-16 text-white px-2 py-2 rounded`}
                             onClick={() => handleResendCheck(transaction.id)}
                             disabled={transaction.buttonValue == 0}
                           >{transaction.buttonValue == 0 ? 'Sent' : 'Resend'}</button>
-                          ) :
-                          (
-                            <button className={`${transaction.buttonValue == 0 ? 'bg-blue-800' : 'bg-blue-600'} w-16 text-white px-2 py-2 rounded`}
-                              onClick={disableUpdate}
-                              disabled={transaction.buttonValue == 0}
-                            >{transaction.buttonValue == 0 ? 'Sent' : 'Resend'}</button>
-                          )
-
-
-                      }
                     </td>
                   </tr>
                 ))

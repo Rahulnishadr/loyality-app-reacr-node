@@ -113,10 +113,6 @@ function Shopify() {
     }
   };
 
-  const data = {};
-  const canSave = data?.role_permissions?.Redeem_History?.read;
-  const disableUpdate = () => showPopup('warning', msg.readOnly);
-
   return (
     <>
       {(showLoader || loading) && <LoaderSpiner text="Loading ..." />}
@@ -161,19 +157,13 @@ function Shopify() {
                     autoComplete="off"
                   />
                   <InlineStack gap="300">
-                    {canSave ? (
-                      <Button
-                        variant="primary"
-                        onClick={count === 0 ? handleSubmit : handleUpdate}
-                        loading={loading}
-                      >
-                        {count === 0 ? 'Create' : 'Update'}
-                      </Button>
-                    ) : (
-                      <Button variant="primary" onClick={disableUpdate}>
-                        {count === 0 ? 'Create' : 'Update'}
-                      </Button>
-                    )}
+                    <Button
+                      variant="primary"
+                      onClick={count === 0 ? handleSubmit : handleUpdate}
+                      loading={loading}
+                    >
+                      {count === 0 ? 'Create' : 'Update'}
+                    </Button>
                   </InlineStack>
                 </FormLayout>
               </form>

@@ -501,23 +501,13 @@ const ExpiredCoupon = () => {
                       className="text-blue-500 cursor-pointer"
                       onClick={() => handleOpenPopup(coupon?.id, coupon?.stdate, coupon?.enddate)}
                     /> */}
-                    {data.role_permissions.Coupon_Management?.delete ? <>
-                      <button
-                        className="text-red-500"
-                        onClick={() => handleDelete(coupon?.id)}
-                        aria-label="Delete entry"
-                      >
-                        <i className="fas fa-trash"></i>
-                      </button>
-                    </> : <>
-                      <button
-                        className="text-red-500"
-                        onClick={() => handleDelete('read')}
-                        aria-label="Delete entry"
-                      >
-                        <i className="fas fa-trash"></i>
-                      </button>
-                    </>}
+                    <button
+                      className="text-red-500"
+                      onClick={() => handleDelete(coupon?.id)}
+                      aria-label="Delete entry"
+                    >
+                      <i className="fas fa-trash"></i>
+                    </button>
 
                   </td>
                 </tr>

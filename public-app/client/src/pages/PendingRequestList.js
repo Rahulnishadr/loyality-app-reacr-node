@@ -367,19 +367,10 @@ const PendingRequestList = () => {
                     <td className="px-2 border-r">
 
                       <div className='flex flex-col p-1'>
-                        {
-                          tokenData?.role_permissions?.Redeem_History?.update ?
-                            <>
-                              <button className='bg-blue-500 text-white px-2 py-1 rounded mb-1 w-18' onClick={() => handleApproveClick(transaction?.id)}>Approve</button>
-                              <button className='bg-red-500 text-white px-2 py-1 rounded w-18' onClick={() => handleRejectClick(transaction?.id)}>Reject</button>
-                            </>
-                            :
-                            <>
-                              <button className='bg-blue-500 text-white px-2 py-1 rounded mb-1 w-18' onClick={disableUpdate}>Approve</button>
-                              <button className='bg-red-500 text-white px-2 py-1 rounded w-18' onClick={disableUpdate}>Reject</button>
-                            </>
-                            
-                        }
+                        <>
+                          <button className='bg-blue-500 text-white px-2 py-1 rounded mb-1 w-18' onClick={() => handleApproveClick(transaction?.id)}>Approve</button>
+                          <button className='bg-red-500 text-white px-2 py-1 rounded w-18' onClick={() => handleRejectClick(transaction?.id)}>Reject</button>
+                        </>
                       </div>
                     </td>
                   </tr>

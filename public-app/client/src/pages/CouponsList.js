@@ -650,27 +650,15 @@ const CouponsList = () => {
                   </td>
                   <td className="px-2 border-r text-sm font-medium whitespace-nowrap text-left">
                     <div className="flex items-center space-x-2">
-                      {data?.role_permissions?.Coupon_Management?.update ? <>
-                        <input
-                          type="checkbox"
-                          checked={item.status === "Active"}
-                          onChange={() => handleCheckboxChange(item)}
-                          className="form-checkbox text-blue-500"
-                        />
-                        <span className="mb-[2px]">
-                          {item.status === "Active" ? "Active" : "Inactive"}
-                        </span>
-                      </> : <>
-                        <input
-                          type="checkbox"
-                          checked={item.status === "Active"}
-                          onChange={() => handleCheckboxChange('read')}
-                          className="form-checkbox text-blue-500"
-                        />
-                        <span className="mb-[2px]">
-                          {item.status === "Active" ? "Active" : "Inactive"}
-                        </span>
-                      </>}
+                      <input
+                        type="checkbox"
+                        checked={item.status === "Active"}
+                        onChange={() => handleCheckboxChange(item)}
+                        className="form-checkbox text-blue-500"
+                      />
+                      <span className="mb-[2px]">
+                        {item.status === "Active" ? "Active" : "Inactive"}
+                      </span>
 
                     </div>
                   </td>
@@ -687,23 +675,13 @@ const CouponsList = () => {
                     {item.couponAccessed}
                   </td>
                   <td className="px-2 border-r text-sm font-medium whitespace-nowrap text-left">
-                    {data.role_permissions.Coupon_Management?.delete ? <>
-                      <button
-                        className="text-red-500"
-                        onClick={() => handleDelete(item?.id)}
-                        aria-label="Delete entry"
-                      >
-                        <i className="fas fa-trash"></i>
-                      </button>
-                    </> : <>
-                      <button
-                        className="text-red-500"
-                        onClick={() => handleDelete('read')}
-                        aria-label="Delete entry"
-                      >
-                        <i className="fas fa-trash"></i>
-                      </button>
-                    </>}
+                    <button
+                      className="text-red-500"
+                      onClick={() => handleDelete(item?.id)}
+                      aria-label="Delete entry"
+                    >
+                      <i className="fas fa-trash"></i>
+                    </button>
 
                   </td>
                 </tr>

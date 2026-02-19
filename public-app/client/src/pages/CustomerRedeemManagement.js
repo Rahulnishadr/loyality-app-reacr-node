@@ -78,14 +78,6 @@ const CustomerRedeemManagement = () => {
     handleGetRedeemRule();
   }, [])
 
-  const data = {};
-
-  const permission = (data) => {
-    if (data == "read") {
-        showPopup('warning', msg.readOnly)
-    }
-}
-
   return (
     <div className="flex justify-center items-center h-full shadow-md bg-gray-50">
       {showLoader && <LoaderSpiner text="Loading ..." />}
@@ -149,21 +141,12 @@ const CustomerRedeemManagement = () => {
         </div>
 
         <div className="text-center">
-        {data?.role_permissions?.Rule_Set?.update ?<>
           <button
             onClick={handleSave}
             className="px-4 py-2 bg-blue-500 float-right text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-blue-400"
-            >
+          >
             {id ? "Update" : "Save"}
           </button>
-            </>:<>
-            <button
-            onClick={()=>permission('read')}
-            className="px-4 py-2 bg-blue-500 float-right text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-blue-400"
-            >
-            {id ? "Update" : "Save"}
-          </button>
-            </>}
         </div>
       </div>
     </div>

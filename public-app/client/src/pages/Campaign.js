@@ -508,25 +508,14 @@ function  Campaign() {
 
       </form>
       <div className='py-4 px-4 w-full text-end'>
-        {data?.role_permissions?.Management?.write ? <>
-          <button
-            onClick={handleSubmit}
-            type="submit"
-            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md"
-            disabled={loading}
-          >
-            {loading ? "Creating..." : "Create"} {/* Conditionally render text */}
-          </button>
-        </> : <>
-          <button
-            onClick={() => handleSubmit('read')}
-            type="submit"
-            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md"
-            disabled={loading} // Disable the button while loading
-          >
-            {loading ? "Creating..." : "Create"} {/* Conditionally render text */}
-          </button>
-        </>}
+        <button
+          onClick={handleSubmit}
+          type="submit"
+          className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md"
+          disabled={loading}
+        >
+          {loading ? "Creating..." : "Create"}
+        </button>
 
       </div>
       <Toast />

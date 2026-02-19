@@ -845,53 +845,24 @@ const ProductRedeemList = () => {
                         {product?.order_status}
                       </td>
 
-                      {data?.role_permissions?.Redeem_History?.read && data?.role_permissions?.Redeem_History?.write ? <>
-                        <td className="border border-gray-300 px-4 py-2 whitespace-nowrap"
+                      <td className="border border-gray-300 px-4 py-2 whitespace-nowrap"
                           rowSpan={Object.keys(product?.product_name).length}>
                           <button className='p-2 bg-green-600 text-white rounded'
                             onClick={() => handleGeneratePDF(product?.account_number, product?.order_id)}
                           >PDF</button>
                         </td>
-                      </> : <>
-                        <td className="border border-gray-300 px-4 py-2 whitespace-nowrap"
-                          rowSpan={Object.keys(product?.product_name).length}>
-                          <button className='p-2 bg-green-600 text-white rounded'
-                            onClick={() => disableUpdate()}
-                          >PDF</button>
-                        </td>
-
-
-                      </>}
-                      {data?.role_permissions?.Redeem_History?.read && data?.role_permissions?.Redeem_History?.write ? <>
-                        <td className="border border-gray-300 px-4 py-2 whitespace-nowrap"
+                      <td className="border border-gray-300 px-4 py-2 whitespace-nowrap"
                           rowSpan={Object.keys(product?.product_name).length}>
                           <button className='p-2 bg-green-600 text-white rounded'
                             onClick={() => handleSend(product?.account_number, product?.order_id)}
                           >Send</button>
                         </td>
-                      </> : <>
-                        <td className="border border-gray-300 px-4 py-2 whitespace-nowrap"
-                          rowSpan={Object.keys(product?.product_name).length}>
-                          <button className='p-2 bg-green-600 text-white rounded'
-                            onClick={() => disableUpdate()}
-                          >Send</button>
-                        </td>
-                      </>}
-                      {data?.role_permissions?.Redeem_History?.read && data?.role_permissions?.Redeem_History?.write ? <>
-                        <td className="border border-gray-300 px-4 py-2 whitespace-nowrap"
+                      <td className="border border-gray-300 px-4 py-2 whitespace-nowrap"
                           rowSpan={Object.keys(product?.product_name).length}>
                           <button className='p-2 bg-green-600 text-white rounded'
                             onClick={() => handleTrack(product?.order_number)}
                           >Track</button>
                         </td>
-                      </> : <>
-                        <td className="border border-gray-300 px-4 py-2 whitespace-nowrap"
-                          rowSpan={Object.keys(product?.product_name).length}>
-                          <button className='p-2 bg-green-600 text-white rounded'
-                            onClick={() => disableUpdate()}
-                          >Track</button>
-                        </td>
-                      </>}
 
                     </>
                   )}

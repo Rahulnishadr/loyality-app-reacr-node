@@ -139,14 +139,6 @@ const PayWithRewards = () => {
     
   };
 
-  const data = {};
-
-  const permission = (data) => {
-    if (data == "read") {
-        showPopup('warning', msg.readOnly)
-    }
-}
-
   return (
     <div className="w-full mx-auto p-8 shadow-md">
       <div className="p-8 border rounded-lg shadow-md bg-gray-50 max-w-3xl mx-auto ">
@@ -308,21 +300,12 @@ const PayWithRewards = () => {
         </div>
 
         <div className="flex justify-end mt-4">
-        {data?.role_permissions?.Rule_Set?.update ? <>
           <button
             onClick={handleSubmit}
             className="px-6 py-2 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 transition duration-200"
-            >
+          >
             {showLoader ? <>Loading</> : <>Submit</>}
           </button>
-            </>:<>
-            <button
-            onClick={()=>permission('read')}
-            className="px-6 py-2 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 transition duration-200"
-            >
-            {showLoader ? <>Loading</> : <>Submit</>}
-          </button>
-            </>}
         </div>
       </div>
     </div>

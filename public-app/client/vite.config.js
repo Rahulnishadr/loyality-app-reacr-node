@@ -17,10 +17,10 @@ export default defineConfig({
     port: 5173,
     host: true,
     proxy: {
-      '/auth': { target: 'https://ecc0-103-206-131-194.ngrok-free.app', changeOrigin: true },
-      '/webhooks': { target: 'https://ecc0-103-206-131-194.ngrok-free.app', changeOrigin: true },
-      '/api': { target: 'https://ecc0-103-206-131-194.ngrok-free.app', changeOrigin: true },
-      '/health': { target: 'https://ecc0-103-206-131-194.ngrok-free.app', changeOrigin: true },
+      '/auth': { target: 'https://6393-103-206-131-194.ngrok-free.app', changeOrigin: true },
+      '/webhooks': { target: 'https://6393-103-206-131-194.ngrok-free.app', changeOrigin: true },
+      '/api': { target: 'https://6393-103-206-131-194.ngrok-free.app', changeOrigin: true },
+      '/health': { target: 'https://6393-103-206-131-194.ngrok-free.app', changeOrigin: true },
     },
   },
   define: {
